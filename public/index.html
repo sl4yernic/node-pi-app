@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Simple App</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    button { padding: 10px 20px; font-size: 16px; margin-right: 10px; }
+    #result { margin-top: 20px; font-size: 18px; }
+  </style>
+</head>
+<body>
+  <h1>Simple Interactive App</h1>
+
+  <button onclick="callHello()">Say Hello</button>
+  <button onclick="callHealth()">Check Health</button>
+  <button onclick="callInfo()">API Info</button>
+
+  <div id="result"></div>
+
+  <script>
+    async function callHello() {
+      const res = await fetch('/api/hello');
+      const data = await res.json();
+      document.getElementById('result').innerText = data.message;
+    }
+
+    async function callHealth() {
+      const res = await fetch('/health');
+      const data = await res.json();
+      document.getElementById('result').innerText =
+        `Health: ${data.status} (${data.timestamp})`;
+    }
+
+    async function callInfo() {
+      const res = await fetch('/api/info');
+      const data = await res.json();
+      document.getElementById('result').innerText =
+        `App: ${data.name} v${data.version}`;
+    }
+  </script>
+</body>
+</html>

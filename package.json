@@ -1,0 +1,14 @@
+{
+  "name": "docker_web_app",
+  "version": "1.0.0",
+  "description": "Node.js deploy on Docker container",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies":{
+    "express": "^4.16.1"
+  },
+  "author": "espinozajavier90@gmail.com",
+  "license": "ISC"
+}
