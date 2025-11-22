@@ -4,6 +4,7 @@
   "description": "Node.js deploy on Docker container",
   "main": "server.js",
   "scripts": {
+    "test": "./tests/syntax.test.sh",
     "start": "node server.js"
   },
   "dependencies":{

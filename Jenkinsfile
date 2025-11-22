@@ -13,11 +13,8 @@ pipeline {
         stage('Tests') {
             steps {
                 sh '''
-                if npm run | grep -q " test"; then
-                  npm test
-                else
-                  echo "No test script defined, skipping tests."
-                fi
+                    echo "Running syntaX test" 
+		    npm test
                 '''
             }
         }
